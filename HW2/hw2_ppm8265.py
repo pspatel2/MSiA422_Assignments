@@ -14,8 +14,7 @@ Write a a class that offers 2 functions that works exactly like the sorted() bui
 '''
 Define the class that has bubble and merge sorting methods
 #  
-The class has three methods defined:
-- get_list() returns the list that the class object was initialized with (unused in this script)
+The class has two methods defined:
 - bubble_sort() implements a bubble sort algorithm on inputted list and returns a sorted version of the inputted list.
 - merge_sort() applies a merge sort algorithm and returns a sorted version of the inputted list.
 '''
@@ -33,12 +32,12 @@ class MySorted(object):
     A class that offers 2  sorting functions (bubble and merge algorithms) which receives inputs exactly like the sorted() built-in
     function in python.
     
-    inputs: iterable of objects: any list of objects (of the same type, e.g. list of numbers, list of strings, list of lists)
+    instance attributes (unused) & method inputs
+    iterable of objects: any list of objects (of the same type, e.g. list of numbers, list of strings, list of lists)
     key: A custom key function can be supplied to customize the sort order, e.g. for sorting list can provide key str.lower(); defaults to None so do not supply anything unless desired
     reversed: A flag field that allows the order of sort to be defined. E.g. if descending order sort is desired supply True. If ascending order is desired supply True or do not provide the arg as it is defaulted to True
     
     '''
-    #This is used in the jupyter notebook code, not in this script for results testing 
     def __init__(self,a_list=[],key_in=lambda x:x,reverse=False):
         self.list_in = a_list
         self.key = key_in
@@ -47,20 +46,19 @@ class MySorted(object):
         else:
             raise ValueError("Reversed field supplied must be True or False")
 
-    #method to return the supplied list (unused in this script, but used in the notebook)
-    def get_list(self):
-        '''
-        input: none (method of MySorted class instance)
-        output: returns the iterable of objects for instance of class MySorted
-        '''
-        return self.list_in
-    
     #class method for implementing a bubble sort algorithm to the supplied list
     def bubble_sorted(self,iterable=[],key=lambda x:x,reverse=False):
         '''
-        input: iterable desired to be sorted, key, reverse flag
-        output: method that sorts (via bubble sort algorithm) the iterable of objects associated for an instance of MySorted class
+        Inputs:
+        iterable of objects: any list of objects (of the same type, e.g. list of numbers, list of strings, list of lists)
+        key: A custom key function can be supplied to customize the sort order, e.g. for sorting list can provide key str.lower(); defaults to None so do not supply anything unless desired
+        reverse: A flag field that allows the order of sort to be defined. E.g. if descending order sort is desired supply True. If ascending order is desired supply True or do not provide the arg as it is defaulted to True
+        
+        Performs: a bubble sort algorithm on inputted list applying the key & reverse fields
+        
+        Outputs: A tuple contains the following: (sorted list, number of comparison performed during sorting, number of swaps performed during sorting, time elapsed)
         '''
+        #counters for time, comparison, and swaps not used in this script; see jupyter notebook for these ouputs
         start_time = time.time()
         nComp = 0 #used in the jupyter notebook
         nSwap = 0
@@ -86,9 +84,16 @@ class MySorted(object):
     #class method for implementing a merge sort algorithm to the supplied list
     def merge_sorted(self,a_list,key=lambda x:x,reverse=False):
         '''
-        input: iterable desired to be sorted, key, reverse flag
-        output: method that sorts (via merge sort algorithm) the iterable of objects associated for an instance of MySorted class
+        Inputs:
+        iterable of objects: any list of objects (of the same type, e.g. list of numbers, list of strings, list of lists)
+        key: A custom key function can be supplied to customize the sort order, e.g. for sorting list can provide key str.lower(); defaults to None so do not supply anything unless desired
+        reverse: A flag field that allows the order of sort to be defined. E.g. if descending order sort is desired supply True. If ascending order is desired supply True or do not provide the arg as it is defaulted to True
+        
+        Performs: a merge sort algorithm on inputted list applying the key & reverse fields
+        
+        Outputs: A tuple contains the following: (sorted list, number of comparison performed during sorting, number of swaps performed during sorting, time elapsed)
         '''
+        #counters for time, comparisons, and swaps not used in this script; see jupyter notebook for these ouputs
         nComp = 0
         nSwap = 0
         lft_comp = 0
