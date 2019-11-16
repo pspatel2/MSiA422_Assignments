@@ -1,0 +1,8 @@
+DESC,START_DT,END_DT,APPT_TYPE
+dentist,11/13/2019,11/13/2019,OneTime
+oil change,11/17/2019,11/17/2019,OneTime
+weigh-in,11/30/2019,05/30/2020,Monthly
+workout,11/14/2019,06/01/2020,Daily
+pay internet bill,11/17/2019,11/17/2020,Monthly
+transunion meeting at site,12/10/2019,12/10/2019,OneTime
+wash dishes,11/12/2019,11/12/2020,Daily
